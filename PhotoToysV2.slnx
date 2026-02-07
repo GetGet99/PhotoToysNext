@@ -1,0 +1,32 @@
+<Solution>
+  <Configurations>
+    <Platform Name="arm64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Libraries/">
+    <Project Path="QuickMarkup/Parser/Get.EasyCSharp.GeneratorTools/Get.EasyCSharp.GeneratorTools.csproj" />
+    <Project Path="QuickMarkup/Parser/Get.LangSupport/Get.LangSupport.csproj" />
+    <Project Path="QuickMarkup/Parser/Get.Lexer.Shared/Get.Lexer.Shared.shproj" />
+    <Project Path="QuickMarkup/Parser/Get.Lexer.SourceGenerator/Get.Lexer.SourceGenerator.csproj" />
+    <Project Path="QuickMarkup/Parser/Get.Lexer/Get.Lexer.csproj" />
+    <Project Path="QuickMarkup/Parser/Get.Parser.Shared/Get.Parser.Shared.shproj" />
+    <Project Path="QuickMarkup/Parser/Get.Parser.SourceGenerator/Get.Parser.SourceGenerator.csproj" />
+    <Project Path="QuickMarkup/Parser/Get.Parser/Get.Parser.csproj" />
+    <Project Path="QuickMarkup/Parser/Get.PLShared/Get.PLShared.csproj" />
+    <Project Path="QuickMarkup/Parser/Get.RegexMachine.Shared/Get.RegexMachine.Shared.shproj" />
+    <Project Path="QuickMarkup/Parser/Get.RegexMachine/Get.RegexMachine.csproj" />
+    <Project Path="QuickMarkup/QuickMarkup.CodeGen/QuickMarkup.CodeGen.csproj" Id="740b0d79-bb30-4066-b544-001b88f7ed60" />
+    <Project Path="QuickMarkup/QuickMarkup.Infra.Test/QuickMarkup.Infra.Test.csproj" />
+    <Project Path="QuickMarkup/QuickMarkup.Infra/QuickMarkup.Infra.csproj" Id="141f36ca-c094-45e9-9559-315c38783ec9" />
+    <Project Path="QuickMarkup/QuickMarkup.Language/QuickMarkup.Language.csproj" />
+    <Project Path="QuickMarkup/QuickMarkup.SourceGen/QuickMarkup.SourceGen.csproj" Id="88646990-7457-4dbf-a047-0f33c980f9c6" />
+    <Project Path="QuickMarkup/QuickMarkup.Syntax.Test/QuickMarkup.Syntax.Test.csproj" />
+  </Folder>
+  <Project Path="PhotoToysV2/PhotoToysV2.csproj">
+    <Platform Solution="*|arm64" Project="arm64" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+    <Deploy />
+  </Project>
+</Solution>

@@ -1,0 +1,111 @@
+﻿<Application
+    x:Class="PhotoToysV2.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+    <Application.Resources>
+        <controls:XamlControlsResources>
+            <controls:XamlControlsResources.MergedDictionaries>
+                <ResourceDictionary>
+                    <Style x:Key="ButtonCheckBoxButtonStyle" TargetType="CheckBox">
+                        <Setter Property="UseSystemFocusVisuals" Value="True" />
+                        <Setter Property="FocusVisualMargin" Value="-3" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <Grid x:Name="RootGrid" Background="{ThemeResource ButtonBackground}" 
+                                            BorderBrush="{ThemeResource ButtonBorderBrush}"
+                                            BorderThickness="3" CornerRadius="16">
+                                        <ContentPresenter
+                                            x:Name="ContentPresenter"
+                                            Padding="0"
+                                            CornerRadius="16"
+                                            AutomationProperties.AccessibilityView="Raw"
+                                            Content="{TemplateBinding Content}"
+                                        />
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CombinedStates">
+                                                <VisualState x:Name="UncheckedNormal">
+                                                    <Storyboard>
+                                                        <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="UncheckedPointerOver">
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="BorderBrush">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="UncheckedPressed">
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="BorderBrush">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="CheckedNormal">
+                                                    <Storyboard>
+                                                        <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentAcrylicBackgroundFillColorBaseBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="BorderBrush">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentFillColorDefaultBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="CheckedDisabled">
+                                                    <Storyboard>
+                                                        <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentAcrylicBackgroundFillColorBaseBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="BorderBrush">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentFillColorDefaultBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="CheckedPointerOver">
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentAcrylicBackgroundFillColorDefaultBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="BorderBrush">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentFillColorSecondaryBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="CheckedPressed">
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentAcrylicBackgroundFillColorBaseBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="BorderBrush">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AccentFillColorTertiaryBrush}" />
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                        <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+                <ResourceDictionary Source="ms-appx:///CommunityToolkit.WinUI.Controls.Segmented/Segmented/Segmented.xaml" />
+            </controls:XamlControlsResources.MergedDictionaries>
+        </controls:XamlControlsResources>
+    </Application.Resources>
+</Application>

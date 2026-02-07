@@ -1,0 +1,8 @@
+.vs
+.vscode
+*/.vs
+*/.vscode
+*/bin
+*/obj
+*/AppPackages
+*/Package.StoreAssociation.xml

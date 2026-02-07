@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<Nullable>enable</Nullable>
+		<UseUwp>true</UseUwp>
+		<Platforms>x86;x64;arm64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<DefaultLanguage>en-US</DefaultLanguage>
+		<PublishAot>false</PublishAot>
+		<PublishProfile>win-$(Platform).pubxml</PublishProfile>
+		<DisableRuntimeMarshalling>false</DisableRuntimeMarshalling>
+		<EnableMsixTooling>true</EnableMsixTooling>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+		<AppxPackageSigningEnabled>False</AppxPackageSigningEnabled>
+		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+		<AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+		<GenerateTestArtifacts>True</GenerateTestArtifacts>
+		<AppxBundle>Never</AppxBundle>
+		<GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
+		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Uwp.Controls.Segmented" Version="8.2.251219" />
+		<PackageReference Include="Get.UI.Data.UWP.NET9" Version="1.0.8" />
+		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.7" />
+		<PackageReference Include="Win2D.uwp" Version="1.28.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\QuickMarkup\QuickMarkup.Infra\QuickMarkup.Infra.csproj" />
+		<ProjectReference Include="..\QuickMarkup\QuickMarkup.SourceGen\QuickMarkup.SourceGen.csproj" ReferenceOutputAssembly="False" OutputItemType="Analyzer" />
+	</ItemGroup>
+</Project>

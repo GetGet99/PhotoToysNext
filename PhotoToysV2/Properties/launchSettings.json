@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PhotoToysV2": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    }
+  }
+}
