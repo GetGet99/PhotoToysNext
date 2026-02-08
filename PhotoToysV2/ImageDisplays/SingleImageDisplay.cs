@@ -11,8 +11,8 @@ namespace PhotoToysV2.ImageDisplays;
     bool ShouldAskToOpen = false;
     IImageEffect? ImageEffect;
     private ICanvasImage? InputImage = null;
-    bool HasInputImage => /-InputImage is not null-/;
-    private ICanvasImage? PreviewImage => /-ApplyEffect(ImageEffect, InputImage)-/;
+    bool HasInputImage => `InputImage is not null`;
+    private ICanvasImage? PreviewImage => `ApplyEffect(ImageEffect, InputImage)`;
     private Size InputSize => /-() => {
         var image = InputImage;
         if (image is null)
@@ -31,32 +31,32 @@ namespace PhotoToysV2.ImageDisplays;
         var bounds = image.Bounds;
         return new Size(bounds.Width, bounds.Height);
     }-/;
-    private ICanvasImage? DisplayImage => /-ShouldShowOriginal ? (InputImage ?? PreviewImage) : PreviewImage-/;
+    private ICanvasImage? DisplayImage => `ShouldShowOriginal ? (InputImage ?? PreviewImage) : PreviewImage`;
     private Size DisplaySize => /-ShouldShowOriginal
         ? (double.IsNaN(InputSize.Width) ? OutputSize : InputSize)
         : OutputSize-/;
     bool ShouldShowOriginal = false;
     <root>
         imgPicker = <ImagePicker MaxWidth=750 MaxHeight=500 Margin=16
-            IsVisible=/-ShouldAskToOpen && InputImage is null && ImageEffect is not ICreateImageEffect-/
+            IsVisible=`ShouldAskToOpen && InputImage is null && ImageEffect is not ICreateImageEffect`
         />
         scrollViewer = <ScrollViewer
-            IsVisible=/-InputImage is not null || ImageEffect is ICreateImageEffect-/
+            IsVisible=`InputImage is not null || ImageEffect is ICreateImageEffect`
             HorizontalScrollBarVisibility=Auto HorizontalScrollMode=Auto
             ZoomMode=Enabled
         >
             <Grid
-                Width=/-DisplaySize.Width-/
-                Height=/-DisplaySize.Height-/
+                Width=`DisplaySize.Width`
+                Height=`DisplaySize.Height`
             >
                 canvas = <CanvasControl
-                    Width=/-DisplaySize.Width-/
-                    Height=/-DisplaySize.Height-/
-                    Draw+=/-Draw-/
+                    Width=`DisplaySize.Width`
+                    Height=`DisplaySize.Height`
+                    Draw+=`Draw`
                 />
                 resizerPlace = <Canvas
-                    Width=/-DisplaySize.Width-/
-                    Height=/-DisplaySize.Height-/
+                    Width=`DisplaySize.Width`
+                    Height=`DisplaySize.Height`
                 />
             </Grid>
         </ScrollViewer>

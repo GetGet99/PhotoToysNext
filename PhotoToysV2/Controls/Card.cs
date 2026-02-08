@@ -12,12 +12,12 @@
     </setup>
     <root
         Content=<Border
-            Padding=/-padding.Value-/
+            Padding=`padding.Value`
             BorderThickness=1
-            CornerRadius=/-cornerRadius.Value-/
-            Child=/-Child-/
-            Background=/-Background ?? bgBrushDynamic.Value-/
-            BorderBrush=/-borderBrushDynamic.Value-/
+            CornerRadius=`cornerRadius.Value`
+            Child=`Child`
+            Background=`Background ?? bgBrushDynamic.Value`
+            BorderBrush=`borderBrushDynamic.Value`
         />
     />
     """)]

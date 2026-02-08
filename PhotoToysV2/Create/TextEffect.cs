@@ -6,29 +6,29 @@ namespace PhotoToysV2.Effects;
     using Microsoft.Graphics.Canvas.Text;
     string Text = "Sample Text";
     string FontFamily = "";
-    Color Color = /-Colors.Red-/;
+    Color Color = `Colors.Red`;
     bool AutoSize = true;
     float FontSize = 28;
     double W = 200;
     double H = 100;
-    <root Padding=/-new(24,16,24,16)-/
-        createResizer=<CreateResizer Value=/-OutputRect-/ Value=>/-OutputRect-/ IsVisible=/-!AutoSize-/ />
+    <root Padding=`new(24,16,24,16)`
+        createResizer=<CreateResizer Value=`OutputRect` Value=>`OutputRect` IsVisible=`!AutoSize` />
     >
         <VStack Spacing=16>
             <HStack Spacing=16 CenterH>
                 <ComboBox Width=100
-                    ItemsSource=/-CanvasTextFormat.GetSystemFontFamilies().ToList()-/
-                    SelectedIndex=0 SelectedValue=>/-FontFamilyHelper-/ CenterV
+                    ItemsSource=`CanvasTextFormat.GetSystemFontFamilies().ToList()`
+                    SelectedIndex=0 SelectedValue=>`FontFamilyHelper` CenterV
                 />
-                fsCbb = <ComboBox IsEditable Width=75 SelectedIndex=10 TextSubmitted+=/-(_, _) => fsCbbCallback()-/
-                    SelectionChanged+=/-(_, _) => fsCbbCallback()-/ CenterV
+                fsCbb = <ComboBox IsEditable Width=75 SelectedIndex=10 TextSubmitted+=`(_, _) => fsCbbCallback()`
+                    SelectionChanged+=`(_, _) => fsCbbCallback()` CenterV
                 >
-                     (8) (9) (10) (11) (12) (14) (16) (18) (20) (24) (28) (36) (48) (72)
+                     8 9 10 11 12 14 16 18 20 24 28 36 48 72
                 </ComboBox>
-                <ColorButton Color=/-Color-/ Color=>/-Color-/ Width=32 Height=32 CenterV />
-                <ToggleSwitch OnContent="Auto Size" OffContent="Auto Size" IsOn=/-AutoSize-/ IsOn=>/-AutoSize-/ CenterV MinWidth=0 />
+                <ColorButton Color=`Color` Color=>`Color` Width=32 Height=32 CenterV />
+                <ToggleSwitch OnContent="Auto Size" OffContent="Auto Size" IsOn=`AutoSize` IsOn=>`AutoSize` CenterV MinWidth=0 />
             </HStack>
-            <TextBox Text=/-Text-/ Text=>/-Text-/ AcceptsReturn IsSpellCheckEnabled />
+            <TextBox Text=`Text` Text=>`Text` AcceptsReturn IsSpellCheckEnabled />
         </VStack>
     </root>
     """)]

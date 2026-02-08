@@ -3,9 +3,9 @@
 [QuickMarkup("""
     Color Color;
     <root
-        Background=<SolidColorBrush Color=/-Color-/ />
+        Background=<SolidColorBrush Color=`Color` />
         Flyout=<Flyout>
-            <ColorPicker Color=/-Color-/ Color=>/-Color-/ IsAlphaEnabled />
+            <ColorPicker Color=`Color` Color=>`Color` IsAlphaEnabled />
         </Flyout>
     />
     """)]

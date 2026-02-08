@@ -13,8 +13,8 @@ namespace PhotoToysV2;
     var root = Window.Current.Content as Frame;
     </setup>
     <root
-        Style=/-style-/
-        Content = canvas = <CanvasControl Width=150 Height=100 Draw+=/-DrawHandler-/ />
+        Style=`style`
+        Content = canvas = <CanvasControl Width=150 Height=100 Draw+=`DrawHandler` />
     />
     """)]
 partial class ButtonCard : CheckBox

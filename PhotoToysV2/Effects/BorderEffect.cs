@@ -5,21 +5,21 @@ namespace PhotoToysV2.Effects;
 
 [QuickMarkup("""
     private Thickness Thickness;
-    private Color Color = /-Colors.Black-/;
+    private Color Color = `Colors.Black`;
     <root Toolbar
-        // marginResizer = <MarginResizer Value=/-Thickness-/ Value=>/-Thickness-/ />
+        // marginResizer = <MarginResizer Value=`Thickness` Value=>`Thickness` />
     >
         <HStack Spacing=16>
              <TextBlock Text="Left:" CenterV />
-             <NumberBox Value=/-Math.Round(Left, 2)-/ Value=>/-Left-/ />
+             <NumberBox Value=`Math.Round(Left, 2)` Value=>`Left` />
              <TextBlock Text="Top:" CenterV />
-             <NumberBox Value=/-Math.Round(Top, 2)-/ Value=>/-Top-/ />
+             <NumberBox Value=`Math.Round(Top, 2)` Value=>`Top` />
              <TextBlock Text="Right:" CenterV />
-             <NumberBox Value=/-Math.Round(Right, 2)-/ Value=>/-Right-/ />
+             <NumberBox Value=`Math.Round(Right, 2)` Value=>`Right` />
              <TextBlock Text="Bottom:" CenterV />
-             <NumberBox Value=/-Math.Round(Bottom, 2)-/ Value=>/-Bottom-/ />
+             <NumberBox Value=`Math.Round(Bottom, 2)` Value=>`Bottom` />
             <TextBlock Text="Color:" CenterV />
-            <ColorButton Color=/-Color-/ Color=>/-Color-/ Width=32 Height=32 />
+            <ColorButton Color=`Color` Color=>`Color` Width=32 Height=32 />
         </HStack>
     </root>
     """)]

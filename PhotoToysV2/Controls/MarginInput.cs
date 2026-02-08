@@ -4,16 +4,16 @@ namespace PhotoToysV2.Controls;
 
 [QuickMarkup("""
     using Windows.UI.Xaml.Shapes;
-    Thickness Value = /-default-/;
+    Thickness Value = `default`;
     <setup>
     var borderBrushDynamic = ThemeResources.Get<Brush>("TextFillColorPrimaryBrush", this).CreateReadOnlyReference();
     </setup>
     <root>
-        <Rectangle Width=150 Height=100 Margin=/-new(50,16,50,16)-/ StrokeThickness=1 Stroke=/-borderBrushDynamic.Value-/ />
-        <NumberBox Minimum=/-0-/ Value=/-Left-/ Value=>/-Left-/ Left CenterV Width=100 />
-        <NumberBox Minimum=/-0-/ Value=/-Top-/ Value=>/-Top-/ Top CenterH Width=100 />
-        <NumberBox Minimum=/-0-/ Value=/-Right-/ Value=>/-Right-/ Right CenterV Width=100 />
-        <NumberBox Minimum=/-0-/ Value=/-Bottom-/ Value=>/-Bottom-/ Bottom CenterH Width=100 />
+        <Rectangle Width=150 Height=100 Margin=`new(50,16,50,16)` StrokeThickness=1 Stroke=`borderBrushDynamic.Value` />
+        <NumberBox Minimum=`0` Value=`Left` Value=>`Left` Left CenterV Width=100 />
+        <NumberBox Minimum=`0` Value=`Top` Value=>`Top` Top CenterH Width=100 />
+        <NumberBox Minimum=`0` Value=`Right` Value=>`Right` Right CenterV Width=100 />
+        <NumberBox Minimum=`0` Value=`Bottom` Value=>`Bottom` Bottom CenterH Width=100 />
     </root>
     """)]
 partial class MarginInput : Grid

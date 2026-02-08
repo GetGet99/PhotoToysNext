@@ -12,13 +12,13 @@
                 VerticalScrollMode=Disabled
             >
                 <HStack Spacing=16 XYFocusKeyboardNavigation=Enabled>
-                    for (x in /-imageEffects-/)
+                    foreach (var x in `imageEffects`)
                         <ButtonCard
-                            ExampleImage=/-ExampleImage(x)-/
-                            Text=/-x?.DisplayName ?? DefaultDisplayName-/
-                            IsChecked=/-x == SelectedTab-/
-                            IsEnabled=/-x != SelectedTab-/
-                            Click+=/-(_, _) => SelectedTab = x-/
+                            ExampleImage=`ExampleImage(x)`
+                            Text=`x?.DisplayName ?? DefaultDisplayName`
+                            IsChecked=`x == SelectedTab`
+                            IsEnabled=`x != SelectedTab`
+                            Click+=`(_, _) => SelectedTab = x`
                         />
                 </HStack>
             </ScrollViewer>

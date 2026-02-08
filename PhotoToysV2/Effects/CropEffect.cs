@@ -5,17 +5,17 @@ namespace PhotoToysV2.Effects;
 [QuickMarkup("""
     private Rect CropRectangle;
     <root Toolbar
-        cropResizer = <CropResizer Value=/-CropRectangle-/ Value=>/-CropRectangle-/ />
+        cropResizer = <CropResizer Value=`CropRectangle` Value=>`CropRectangle` />
     >
         <HStack Spacing=16>
             <TextBlock Text="X:" CenterV />
-            <NumberBox Value=/-Math.Round(X, 2)-/ Value=>/-X-/ />
+            <NumberBox Value=`Math.Round(X, 2)` Value=>`X` />
             <TextBlock Text="Y:" CenterV />
-            <NumberBox Value=/-Math.Round(Y, 2)-/ Value=>/-Y-/ />
+            <NumberBox Value=`Math.Round(Y, 2)` Value=>`Y` />
             <TextBlock Text="Width:" CenterV />
-            <NumberBox Value=/-Math.Round(Width, 2)-/ Value=>/-Width-/ />
+            <NumberBox Value=`Math.Round(Width, 2)` Value=>`Width` />
             <TextBlock Text="Height:" CenterV />
-            <NumberBox Value=/-Math.Round(Height, 2)-/ Value=>/-Height-/ />
+            <NumberBox Value=`Math.Round(Height, 2)` Value=>`Height` />
         </HStack>
     </root>
     """)]

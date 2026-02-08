@@ -4,8 +4,8 @@ namespace PhotoToysV2.Controls;
 [QuickMarkup("""
     Rect Value = default;
     <root
-        CurrentRect=/-Value-/
-        CurrentRect=>/-Value-/
+        CurrentRect=`Value`
+        CurrentRect=>`Value`
     />
     """)]
 partial class CropResizer : ResizerUI

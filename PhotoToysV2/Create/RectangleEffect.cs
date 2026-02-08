@@ -6,23 +6,17 @@ namespace PhotoToysV2.Effects;
 [QuickMarkup("""
     double W = 300;
     double H = 100;
-    Color Color = /-Colors.DarkRed-/;
+    Color Color = `Colors.DarkRed`;
     <root Toolbar
-        createResizer=<CreateResizer Value=/-OutputRect-/ Value=>/-OutputRect-/ />
+        createResizer=<CreateResizer Value=`OutputRect` Value=>`OutputRect` />
     >
         <HStack Spacing=16>
             <TextBlock Text="Width" CenterV />
-            <NumberBox Value=/-Math.Round(W, 2)-/ Value=>/-W-/ />
+            <NumberBox Value=`Math.Round(W, 2)` Value=>`W` />
             <TextBlock Text="Height" CenterV />
-            <NumberBox Value=/-Math.Round(H, 2)-/ Value=>/-H-/ />
+            <NumberBox Value=`Math.Round(H, 2)` Value=>`H` />
             <TextBlock Text="Color" CenterV />
-            <Button Background=<SolidColorBrush Color=/-Color-/ /> Width=32 Height=32 CenterV>
-                <.Flyout>
-                    <Flyout>
-                        <ColorPicker Color=/-Colors.DarkRed-/ Color=>/-Color-/ IsAlphaEnabled />
-                    </Flyout>
-                </.Flyout>
-            </Button>
+            <ColorButton Color=`Colors.DarkRed` Color=>`Color` Width=32 Height=32 CenterV />
         </HStack>
     </root>
     """)]

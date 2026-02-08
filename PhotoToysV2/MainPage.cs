@@ -7,9 +7,9 @@ namespace PhotoToysV2;
     using CommunityToolkit.WinUI.Controls;
     using SymbolExIcon = Get.Symbols.SymbolExIcon;
     int SelectedMenuIndex = 0;
-    private double TitleBarHeight = /-double.NaN-/;
-    private double LeftInset = /-double.NaN-/;
-    private double RightInset = /-double.NaN-/;
+    private double TitleBarHeight = `double.NaN`;
+    private double LeftInset = `double.NaN`;
+    private double RightInset = `double.NaN`;
     <setup>
     var segmentedStyle = (Style)App.Current.Resources["PivotSegmentedStyle"];
     var CaptionTextBlockStyle = (Style)App.Current.Resources["CaptionTextBlockStyle"];
@@ -21,24 +21,24 @@ namespace PhotoToysV2;
             </>
         >
             <Grid>
-                titleBar = <Grid Background=/-Solid(Colors.Transparent)-/ />
-                child = <HStack Spacing=6 Height=/-TitleBarHeight-/ Margin=/-new(Math.Max(8, LeftInset),0,RightInset,0)-/ !IsHitTestVisible>
-                    <Image Width=16 Height=16 CenterV Source=/-new BitmapImage(new Uri("ms-appx:///Assets/PhotoToys.png"))-/ />
+                titleBar = <Grid Background=`Solid(Colors.Transparent)` />
+                child = <HStack Spacing=6 Height=`TitleBarHeight` Margin=`new(Math.Max(8, LeftInset),0,RightInset,0)` !IsHitTestVisible>
+                    <Image Width=16 Height=16 CenterV Source=`new BitmapImage(new Uri("ms-appx:///Assets/PhotoToys.png"))` />
                     <HStack Spacing=6 CenterV>
-                        <TextBlock Text="PhotoToys Next" Style=/-CaptionTextBlockStyle-/ />
-                        <TextBlock Text="ALPHA" FontSize=10 Bottom Foreground=/-Solid(Colors.DarkGray)-/ />
+                        <TextBlock Text="PhotoToys Next" Style=`CaptionTextBlockStyle` />
+                        <TextBlock Text="ALPHA" FontSize=10 Bottom Foreground=`Solid(Colors.DarkGray)` />
                     </HStack>
                     /*
-                    <Segmented Style=/-segmentedStyle-/ CenterV Background=/-Solid(Colors.Transparent)-/
-                        SelectedIndex=0 SelectedIndex=>/-SelectedMenuIndex-/>
-                        for (x in /-Menus-/) {
-                            <SegmentedItem Content=/-x.Name-/ Icon=<SymbolExIcon SymbolEx=/-x.Icon-/ /> />
+                    <Segmented Style=`segmentedStyle` CenterV Background=`Solid(Colors.Transparent)`
+                        SelectedIndex=0 SelectedIndex=>`SelectedMenuIndex`>
+                        foreach (var x in `Menus`) {
+                            <SegmentedItem Content=`x.Name` Icon=<SymbolExIcon SymbolEx=`x.Icon` /> />
                         }
                     </Segmented>
                     */
                 </HStack>
             </Grid>
-            <Border Child=/-Menus[SelectedMenuIndex].UI-/ Grid_Row=1 />
+            <Border Child=`Menus[SelectedMenuIndex].UI` Grid_Row=1 />
         </Grid>
     </root>
     """)]

@@ -5,7 +5,7 @@
     <root Toolbar>
         <HStack Spacing=16>
             <TextBlock Text="Intensity" CenterV />
-            <Slider Value=50 Value=>/-Intensity-/
+            <Slider Value=50 Value=>`Intensity`
                     Minimum=0 Maximum=100 Width=200 CenterV />
         </HStack>
     </root>

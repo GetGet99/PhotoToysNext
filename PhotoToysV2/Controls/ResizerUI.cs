@@ -7,36 +7,36 @@ namespace PhotoToysV2.Controls;
     Size InitialSize;
     private double UserLeft = 0;
     private double UserTop = 0;
-    private double UserWidth = /-double.NaN-/;
-    private double UserHeight = /-double.NaN-/;
-    private double CurrentWidth => /-double.IsNaN(UserWidth) ? InitialSize.Width : UserWidth-/;
-    private double CurrentHeight => /-double.IsNaN(UserHeight) ? InitialSize.Height : UserHeight-/;
-    private double UIScale => /- Math.Max(1 / ParentZoomFactor, 0.4f) -/;
-    private double ResizerSize => /- 10 * UIScale -/;
-    private double BorderSize => /- 3 * UIScale -/;
-    private double Margin => /- ResizerSize - BorderSize -/;
-    private Thickness mg => /- new(-Margin / 2) -/;
+    private double UserWidth = `double.NaN`;
+    private double UserHeight = `double.NaN`;
+    private double CurrentWidth => `double.IsNaN(UserWidth) ? InitialSize.Width : UserWidth`;
+    private double CurrentHeight => `double.IsNaN(UserHeight) ? InitialSize.Height : UserHeight`;
+    private double UIScale => `Math.Max(1 / ParentZoomFactor, 0.4f)`;
+    private double ResizerSize => `10 * UIScale`;
+    private double BorderSize => `3 * UIScale`;
+    private double Margin => `ResizerSize - BorderSize`;
+    private Thickness mg => `new(-Margin / 2)`;
     <root
-        Canvas_Left=/-internalLayoutChanges ? UserLeft : 0-/
-        Canvas_Top=/-internalLayoutChanges ? UserTop : 0-/
-        Width=/-internalLayoutChanges ? CurrentWidth : InitialSize.Width-/
-        Height=/-internalLayoutChanges ? CurrentHeight : InitialSize.Height-/
+        Canvas_Left=`internalLayoutChanges ? UserLeft : 0`
+        Canvas_Top=`internalLayoutChanges ? UserTop : 0`
+        Width=`internalLayoutChanges ? CurrentWidth : InitialSize.Width`
+        Height=`internalLayoutChanges ? CurrentHeight : InitialSize.Height`
     >
         // Sides
-        _l = <Border Width=/-BorderSize-/ Left />
-        _r = <Border Width=/-BorderSize-/ Right />
-        _t = <Border Height=/-BorderSize-/ Top />
-        _b = <Border Height=/-BorderSize-/ Bottom />
+        _l = <Border Width=`BorderSize` Left />
+        _r = <Border Width=`BorderSize` Right />
+        _t = <Border Height=`BorderSize` Top />
+        _b = <Border Height=`BorderSize` Bottom />
         // Middle Handle
-        l = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ CenterV Left />
-        r = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ CenterV Right />
-        t = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ Top CenterH />
-        b = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ Bottom CenterH />
+        l = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` CenterV Left />
+        r = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` CenterV Right />
+        t = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` Top CenterH />
+        b = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` Bottom CenterH />
         // Corners
-        tl = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ Top Left />
-        tr = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ Top Right/>
-        bl = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ Bottom Left />
-        br = <Border Width=/-ResizerSize-/ Height=/-ResizerSize-/ Margin=/-mg-/ Bottom Right />
+        tl = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` Top Left />
+        tr = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` Top Right/>
+        bl = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` Bottom Left />
+        br = <Border Width=`ResizerSize` Height=`ResizerSize` Margin=`mg` Bottom Right />
     </root>
     """)]
 abstract partial class ResizerUI : Grid

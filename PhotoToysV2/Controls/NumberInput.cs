@@ -10,16 +10,16 @@
     bool NumberBoxMode = false;
     <root>
         <Slider
-            IsVisible=/-!NumberBoxMode-/
-            Minimum=/-Minimum-/ Maximum=/-Maximum-/ StepFrequency=/-Step-/
-            Value=/-Value-/ Value=>/-Value-/
+            IsVisible=`!NumberBoxMode`
+            Minimum=`Minimum` Maximum=`Maximum` StepFrequency=`Step`
+            Value=`Value` Value=>`Value`
         />
-        <NumberBox IsVisible=/-NumberBoxMode-/ Minimum=/-Minimum-/ Maximum=/-Maximum-/ Value=/-Value-/ Value=>/-Value-/
+        <NumberBox IsVisible=`NumberBoxMode` Minimum=`Minimum` Maximum=`Maximum` Value=`Value` Value=>`Value`
             NumberFormatter=<DecimalFormatter
                 IntegerDigits=1
-                FractionDigits=/- -(int)Math.Floor(Math.Log10(Step)) -/
+                FractionDigits=`-(int)Math.Floor(Math.Log10(Step))`
                 NumberRounder=<IncrementNumberRounder
-                    Increment=/-Step-/
+                    Increment=`Step`
                     RoundingAlgorithm=RoundHalfUp
                 />
             />

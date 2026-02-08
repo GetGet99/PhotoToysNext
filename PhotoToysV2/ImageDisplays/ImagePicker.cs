@@ -10,12 +10,12 @@ namespace PhotoToysV2;
     <setup>
     var subtitleStyle = (Style)Application.Current.Resources["SubtitleTextBlockStyle"];
     </setup>
-    <root AllowDrop DragOver+=/-OnDragOver-/ Drop+=/-OnDrop-/>
+    <root AllowDrop DragOver+=`OnDragOver` Drop+=`OnDrop`>
         <VStack Spacing=16 Center>
-            <TextBlock Text="Drop Image here" Style=/-subtitleStyle-/ CenterH />
+            <TextBlock Text="Drop Image here" Style=`subtitleStyle` CenterH />
             <TextBlock Text="or" CenterH />
-            <Button Content="Select an image from folder" CenterH Click+=/-(_, _) => PickImageFromFolder()-/ />
-            <Button Content="Paste Image" CenterH Click+=/-(_, _) => GetFromClipboard()-/ />
+            <Button Content="Select an image from folder" CenterH Click+=`(_, _) => PickImageFromFolder()` />
+            <Button Content="Paste Image" CenterH Click+=`(_, _) => GetFromClipboard()` />
         </VStack>
     </root>
     """)]

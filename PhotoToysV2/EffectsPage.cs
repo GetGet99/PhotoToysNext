@@ -3,6 +3,7 @@
 namespace PhotoToysV2;
 
 [QuickMarkup("""
+    using SymbolIconSource = Microsoft.UI.Xaml.Controls.SymbolIconSource;
     private IImageEffect? SelectedTab;
     private bool ShouldShowOriginal;
     <setup>
@@ -22,10 +23,10 @@ namespace PhotoToysV2;
                 <RowDefinition />
                 <RowDefinition Auto />
             </.RowDefinitions>
-            imageDisplay = <SingleImageDisplay ImageEffect={SelectedTab} ShouldAskToOpen={!createEffectMode} ShouldShowOriginal={ShouldShowOriginal} />
+            imageDisplay = <SingleImageDisplay ImageEffect=`SelectedTab` ShouldAskToOpen=`!createEffectMode` ShouldShowOriginal=`ShouldShowOriginal` />
             <VStack Spacing=12 Margin=16 Grid_Row=1>
                 <HStack CenterH>
-                    <HStack Margin={new(0,0,8,0)} IsVisible={SelectedTab is null} >
+                    <HStack Margin=`new(0,0,8,0)` IsVisible=`SelectedTab is null` >
                         <Button Padding=12 FullRounded Content=<SymbolIcon(Delete)
                             Foreground=/-
                                 imageDisplay.CurrentDisplay is not null ? fillCritical.Value :
@@ -33,7 +34,7 @@ namespace PhotoToysV2;
                             -/
                             Tooltip="Clear Image"
                         />
-                            IsEnabled={imageDisplay.CurrentDisplay is not null}
+                            IsEnabled=`imageDisplay.CurrentDisplay is not null`
                             Click+=/-async (_, _) => {
                             if (await deleteWarning.ShowAsync() is ContentDialogResult.Primary) {
                                 imageDisplay.Reset();
@@ -44,18 +45,18 @@ namespace PhotoToysV2;
                     <HStack Spacing=8 CenterH>
                         <Button Padding=12 FullRounded Content=<SymbolIcon(Undo) />
                             Tooltip="Undo"
-                            IsEnabled={History.Current.CanUndo} Click+=/-(_, _) => {
+                            IsEnabled=`History.Current.CanUndo` Click+=/-(_, _) => {
                             imageDisplay.Undo();
                             SelectedTab = null;
                         }-/ />
                         <Button Padding=12 FullRounded Content=<SymbolIcon(Redo) />
                             Tooltip="Redo"
-                            IsEnabled={History.Current.CanRedo} Click+=/-(_, _) => {
+                            IsEnabled=`History.Current.CanRedo` Click+=/-(_, _) => {
                             imageDisplay.Redo();
                             SelectedTab = null;
                         }-/ />
-                        <HStack IsVisible={SelectedTab is not null} Spacing=8 CenterH>
-                            <Border Child={(UIElement)SelectedTab} />
+                        <HStack IsVisible=`SelectedTab is not null` Spacing=8 CenterH>
+                            <Border Child=`(UIElement)SelectedTab` />
                             <Button Padding=12 FullRounded Content=<SymbolIcon Symbol=Accept /> Click+=/-(_, _) => {
                                 imageDisplay.Apply();
                                 SelectedTab = null;
@@ -63,25 +64,25 @@ namespace PhotoToysV2;
                             />
                             holdBtn = <HoldButton Padding=12 FullRounded
                                 Content=<SymbolIcon Symbol=View />
-                                IsHolding=>{ShouldShowOriginal}
+                                IsHolding=>`ShouldShowOriginal`
                                 Tooltip="Hold to show original image\n\nHint: Hold CTRL to show original image"
-                                IsEnabled={imageDisplay.HasInputImage}
-                                Click+={() => holdBtnTip.IsOpen = true}
+                                IsEnabled=`imageDisplay.HasInputImage`
+                                Click+=`() => holdBtnTip.IsOpen = true`
                             />
                         </HStack>
-                        <HStack IsVisible={SelectedTab is null} Spacing=8 CenterH Margin={new(-8,0,0,0)}>
-                            <Button IsEnabled={imageDisplay.CurrentDisplay is not null} Padding=12 FullRounded Content=<SymbolIcon Symbol=Save /> Click+={(_, _) => imageDisplay.Save()} />
-                            <Button IsEnabled={imageDisplay.CurrentDisplay is not null} Padding=12 FullRounded Content=<SymbolIcon Symbol=Copy /> Click+={(_, _) => imageDisplay.Copy()} />
+                        <HStack IsVisible=`SelectedTab is null` Spacing=8 CenterH Margin=`new(-8,0,0,0)`>
+                            <Button IsEnabled=`imageDisplay.CurrentDisplay is not null` Padding=12 FullRounded Content=<SymbolIcon Symbol=Save /> Click+=`(_, _) => imageDisplay.Save()` />
+                            <Button IsEnabled=`imageDisplay.CurrentDisplay is not null` Padding=12 FullRounded Content=<SymbolIcon Symbol=Copy /> Click+=`(_, _) => imageDisplay.Copy()` />
                         </HStack>
                     </HStack>
                 </HStack>
                 <Grid>
-                    <FeatureSelection({imageEffects}) CurrentDisplay={imageDisplay.CurrentDisplay} SelectedTab={createMode() ? null : SelectedTab} SelectedTab=>{SelectedTab} IsVisible={!createMode()} />
-                    <FeatureSelection({createEffects}) DefaultDisplayName="Bring your own" CurrentDisplay={imageDisplay.CurrentDisplay} SelectedTab={createMode() ? SelectedTab : null} SelectedTab=>{SelectedTab} IsVisible={createMode()} />
+                    <FeatureSelection(`imageEffects`) CurrentDisplay=`imageDisplay.CurrentDisplay` SelectedTab=`createMode() ? null : SelectedTab` SelectedTab=>`SelectedTab` IsVisible=`!createMode()` />
+                    <FeatureSelection(`createEffects`) DefaultDisplayName="Bring your own" CurrentDisplay=`imageDisplay.CurrentDisplay` SelectedTab=`createMode() ? SelectedTab : null` SelectedTab=>`SelectedTab` IsVisible=`createMode()` />
                 </Grid>
             </VStack>
             holdBtnTip=<TeachingTip
-                IconSource=<SymbolIconSource Symbol={(Symbol)0xE815} />
+                IconSource=<SymbolIconSource Symbol=`(Symbol)0xE815` />
                 Title="Hold Button"
                 Subtitle="Hold to show the original image"
             />

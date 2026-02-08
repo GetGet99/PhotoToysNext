@@ -7,7 +7,7 @@ namespace PhotoToysV2.Effects;
     <root Toolbar>
         <HStack Spacing=16>
             <TextBlock Text="Intensity" CenterV />
-            <Slider Value=3 Value=>/-BlurAmount-/ Minimum=0 Maximum=10 StepFrequency=0.01 Width=200 CenterV />
+            <Slider Value=3 Value=>`BlurAmount` Minimum=0 Maximum=10 StepFrequency=0.01 Width=200 CenterV />
         </HStack>
     </root>
     """)]
