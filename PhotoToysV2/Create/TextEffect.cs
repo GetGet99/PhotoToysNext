@@ -20,8 +20,8 @@ namespace PhotoToysV2.Effects;
                     ItemsSource=`CanvasTextFormat.GetSystemFontFamilies().ToList()`
                     SelectedIndex=0 SelectedValue=>`FontFamilyHelper` CenterV
                 />
-                fsCbb = <ComboBox IsEditable Width=75 SelectedIndex=10 TextSubmitted+=`(_, _) => fsCbbCallback()`
-                    SelectionChanged+=`(_, _) => fsCbbCallback()` CenterV
+                fsCbb = <ComboBox IsEditable Width=75 SelectedIndex=10 @TextSubmitted+=`fsCbbCallback()`
+                    @SelectionChanged+=`fsCbbCallback()` CenterV
                 >
                      8 9 10 11 12 14 16 18 20 24 28 36 48 72
                 </ComboBox>

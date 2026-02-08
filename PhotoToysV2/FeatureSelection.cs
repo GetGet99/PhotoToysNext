@@ -18,7 +18,7 @@
                             Text=`x?.DisplayName ?? DefaultDisplayName`
                             IsChecked=`x == SelectedTab`
                             IsEnabled=`x != SelectedTab`
-                            Click+=`(_, _) => SelectedTab = x`
+                            @Click+=`SelectedTab = x`
                         />
                 </HStack>
             </ScrollViewer>

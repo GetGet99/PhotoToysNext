@@ -67,12 +67,12 @@ namespace PhotoToysV2;
                                 IsHolding=>`ShouldShowOriginal`
                                 Tooltip="Hold to show original image\n\nHint: Hold CTRL to show original image"
                                 IsEnabled=`imageDisplay.HasInputImage`
-                                Click+=`() => holdBtnTip.IsOpen = true`
+                                @Click+=`holdBtnTip.IsOpen = true`
                             />
                         </HStack>
                         <HStack IsVisible=`SelectedTab is null` Spacing=8 CenterH Margin=`new(-8,0,0,0)`>
-                            <Button IsEnabled=`imageDisplay.CurrentDisplay is not null` Padding=12 FullRounded Content=<SymbolIcon Symbol=Save /> Click+=`(_, _) => imageDisplay.Save()` />
-                            <Button IsEnabled=`imageDisplay.CurrentDisplay is not null` Padding=12 FullRounded Content=<SymbolIcon Symbol=Copy /> Click+=`(_, _) => imageDisplay.Copy()` />
+                            <Button IsEnabled=`imageDisplay.CurrentDisplay is not null` Padding=12 FullRounded Content=<SymbolIcon Symbol=Save /> @Click+=`imageDisplay.Save()` />
+                            <Button IsEnabled=`imageDisplay.CurrentDisplay is not null` Padding=12 FullRounded Content=<SymbolIcon Symbol=Copy /> @Click+=`imageDisplay.Copy()` />
                         </HStack>
                     </HStack>
                 </HStack>
