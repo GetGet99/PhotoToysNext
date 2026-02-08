@@ -8,7 +8,7 @@ namespace PhotoToysV2.Effects;
     double H = 200;
     Color Color = `Colors.DarkRed`;
     <root Toolbar
-        createResizer=<CreateResizer Value=`OutputRect` Value=>`OutputRect` />
+        createResizer=<CreateResizer Value<=>`OutputRect` />
     >
         <HStack Spacing=16>
             <TextBlock Text="Width" CenterV />
@@ -16,7 +16,7 @@ namespace PhotoToysV2.Effects;
             <TextBlock Text="Height" CenterV />
             <NumberBox Value=`Math.Round(H, 2)` Value=>`H` />
             <TextBlock Text="Color" CenterV />
-            <ColorButton Color=`Colors.DarkRed` Color=>`Color` Width=32 Height=32 CenterV />
+            <ColorButton Color<=>`Color` Width=32 Height=32 CenterV />
         </HStack>
     </root>
     """)]

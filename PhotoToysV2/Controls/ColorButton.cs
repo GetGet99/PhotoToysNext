@@ -5,7 +5,7 @@
     <root
         Background=<SolidColorBrush Color=`Color` />
         Flyout=<Flyout>
-            <ColorPicker Color=`Color` Color=>`Color` IsAlphaEnabled />
+            <ColorPicker Color<=>`Color` IsAlphaEnabled />
         </Flyout>
     />
     """)]

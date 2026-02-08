@@ -1,11 +1,11 @@
 ﻿namespace PhotoToysV2.Effects;
 
 [QuickMarkup("""
-    double Intensity = 0;
+    double Intensity = 100;
     <root Toolbar>
         <HStack Spacing=16>
             <TextBlock Text="Intensity" CenterV />
-            <Slider Value=100 Value=>`Intensity`
+            <Slider Value<=>`Intensity`
                     Minimum=0 Maximum=100 Width=200 CenterV />
         </HStack>
     </root>

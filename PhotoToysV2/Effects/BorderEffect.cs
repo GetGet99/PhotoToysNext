@@ -7,7 +7,7 @@ namespace PhotoToysV2.Effects;
     private Thickness Thickness;
     private Color Color = `Colors.Black`;
     <root Toolbar
-        // marginResizer = <MarginResizer Value=`Thickness` Value=>`Thickness` />
+        // marginResizer = <MarginResizer Value<=>`Thickness` />
     >
         <HStack Spacing=16>
              <TextBlock Text="Left:" CenterV />
@@ -19,7 +19,7 @@ namespace PhotoToysV2.Effects;
              <TextBlock Text="Bottom:" CenterV />
              <NumberBox Value=`Math.Round(Bottom, 2)` Value=>`Bottom` />
             <TextBlock Text="Color:" CenterV />
-            <ColorButton Color=`Color` Color=>`Color` Width=32 Height=32 />
+            <ColorButton Color<=>`Color` Width=32 Height=32 />
         </HStack>
     </root>
     """)]

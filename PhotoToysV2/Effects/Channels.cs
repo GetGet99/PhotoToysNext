@@ -32,7 +32,7 @@
     <setup>
     string[] texts = ["Red", "Green", "Blue", "Alpha", "Constant"];
     </setup>
-    <root Padding=`new(24,16,24,16)` >
+    <root Padding=`new(24,16,24,16)`>
         <Grid CenterH RowSpacing=16 ColumnSpacing=16
             RowDefinitions=<>
                 foreach (var i in ..7) <RowDefinition Height=`Auto()` />
@@ -61,7 +61,7 @@
             foreach (var i in 0..5) {
                 <TextBlock Text=`$"Input {texts[i]}"` CenterV Grid_Row=`TransposeInput ? 0 : i + 1` Grid_Column=`TransposeInput ? i + 1 : 0` />
                 foreach (var j in 0..4) {
-                    <NumberInput Value=`MatrixRef[i, j].Value` Value=>`MatrixRef[i, j].Value`
+                    <NumberInput Value<=>`MatrixRef[i, j].Value`
                         Minimum=`Min` Maximum=`Max` Step=0.01 Width=100
                         CenterV
                         Grid_Row=`TransposeInput ? j + 1 : i + 1`
@@ -71,8 +71,8 @@
                 }
             }
             <HStack Grid_Row=6 Grid_ColumnSpan=6 Spacing=16 CenterH>
-                <ToggleSwitch IsOn IsOn=>`TransposeInput` OnContent="Output On Left" OffContent="Output On Top" />
-                <ToggleSwitch IsOn=>`NumberBoxMode` OnContent="Advanced Mode" OffContent="Advanced Mode" />
+                <ToggleSwitch IsOn<=>`TransposeInput` OnContent="Output On Left" OffContent="Output On Top" />
+                <ToggleSwitch IsOn<=>`NumberBoxMode` OnContent="Advanced Mode" OffContent="Advanced Mode" />
             </HStack>
         </Grid>
     //

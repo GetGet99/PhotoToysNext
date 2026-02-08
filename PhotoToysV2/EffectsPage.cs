@@ -26,7 +26,7 @@ namespace PhotoToysV2;
             imageDisplay = <SingleImageDisplay ImageEffect=`SelectedTab` ShouldAskToOpen=`!createEffectMode` ShouldShowOriginal=`ShouldShowOriginal` />
             <VStack Spacing=12 Margin=16 Grid_Row=1>
                 <HStack CenterH>
-                    <HStack Margin=`new(0,0,8,0)` IsVisible=`SelectedTab is null` >
+                    <HStack Margin=`new(0,0,8,0)` IsVisible=`SelectedTab is null`>
                         <Button Padding=12 FullRounded Content=<SymbolIcon(Delete)
                             Foreground=/-
                                 imageDisplay.CurrentDisplay is not null ? fillCritical.Value :

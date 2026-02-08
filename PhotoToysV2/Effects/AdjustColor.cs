@@ -2,16 +2,16 @@
 
 [QuickMarkup("""
     double Hue = 0;
-    double Saturation = 0;
+    double Saturation = 1;
     double Brightness = 0;
     <root Toolbar>
         <HStack Spacing=16>
             <TextBlock Text="Hue" CenterV />
-            <SliderFromCenter Value=>`Hue` Minimum=-180 Maximum=180 Width=200 CenterV />
+            <SliderFromCenter Value<=>`Hue` Minimum=-180 Maximum=180 Width=200 CenterV />
             <TextBlock Text="Saturation" CenterV />
-            <SliderFromCenter Value=1 Value=>`Saturation` Minimum=0 Maximum=2 StepFrequency=0.01 Width=200 CenterV />
+            <SliderFromCenter Value<=>`Saturation` Minimum=0 Maximum=2 StepFrequency=0.01 Width=200 CenterV />
             <TextBlock Text="Brightness" CenterV />
-            <SliderFromCenter Value=>`Brightness` Minimum=-3 Maximum=3 StepFrequency=0.01 Width=200 CenterV />
+            <SliderFromCenter Value<=>`Brightness` Minimum=-3 Maximum=3 StepFrequency=0.01 Width=200 CenterV />
         </HStack>
     </root>
     """)]

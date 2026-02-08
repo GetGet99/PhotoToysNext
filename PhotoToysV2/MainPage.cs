@@ -30,7 +30,7 @@ namespace PhotoToysV2;
                     </HStack>
                     /*
                     <Segmented Style=`segmentedStyle` CenterV Background=`Solid(Colors.Transparent)`
-                        SelectedIndex=0 SelectedIndex=>`SelectedMenuIndex`>
+                        SelectedIndex<=>`SelectedMenuIndex`>
                         foreach (var x in `Menus`) {
                             <SegmentedItem Content=`x.Name` Icon=<SymbolExIcon SymbolEx=`x.Icon` /> />
                         }

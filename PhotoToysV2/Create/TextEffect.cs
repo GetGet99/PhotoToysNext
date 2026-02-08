@@ -12,7 +12,7 @@ namespace PhotoToysV2.Effects;
     double W = 200;
     double H = 100;
     <root Padding=`new(24,16,24,16)`
-        createResizer=<CreateResizer Value=`OutputRect` Value=>`OutputRect` IsVisible=`!AutoSize` />
+        createResizer=<CreateResizer Value<=>`OutputRect` IsVisible=`!AutoSize` />
     >
         <VStack Spacing=16>
             <HStack Spacing=16 CenterH>
@@ -25,10 +25,10 @@ namespace PhotoToysV2.Effects;
                 >
                      8 9 10 11 12 14 16 18 20 24 28 36 48 72
                 </ComboBox>
-                <ColorButton Color=`Color` Color=>`Color` Width=32 Height=32 CenterV />
-                <ToggleSwitch OnContent="Auto Size" OffContent="Auto Size" IsOn=`AutoSize` IsOn=>`AutoSize` CenterV MinWidth=0 />
+                <ColorButton Color<=>`Color` Width=32 Height=32 CenterV />
+                <ToggleSwitch OnContent="Auto Size" OffContent="Auto Size" IsOn<=>`AutoSize` CenterV MinWidth=0 />
             </HStack>
-            <TextBox Text=`Text` Text=>`Text` AcceptsReturn IsSpellCheckEnabled />
+            <TextBox Text<=>`Text` AcceptsReturn IsSpellCheckEnabled />
         </VStack>
     </root>
     """)]
