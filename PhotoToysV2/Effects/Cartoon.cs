@@ -16,18 +16,18 @@ namespace PhotoToysV2.Effects;
                 foreach (var i in ..4) <ColumnDefinition Width=`Auto()` />
             </>
         >
-            <TextBlock Text="Edge Strength" CenterV Grid_Row=0 Grid_Column=0 />
+            <TextBlock Text="Edge Strength" CenterV Grid.Row=0 Grid.Column=0 />
             <Slider Value<=>`EdgeStrength`
-                    Minimum=0 Maximum=1.0 StepFrequency=0.05 Width=200 CenterV Grid_Row=0 Grid_Column=1 />
-            <TextBlock Text="Smoothness" CenterV Grid_Row=0 Grid_Column=2 />
+                    Minimum=0 Maximum=1.0 StepFrequency=0.05 Width=200 CenterV Grid.Row=0 Grid.Column=1 />
+            <TextBlock Text="Smoothness" CenterV Grid.Row=0 Grid.Column=2 />
             <Slider Value<=>`Smoothness`
-                    Minimum=0 Maximum=10 StepFrequency=0.25 Width=200 CenterV Grid_Row=0 Grid_Column=3 />
-            <TextBlock Text="Color Level" CenterV Grid_Row=1 Grid_Column=0 />
+                    Minimum=0 Maximum=10 StepFrequency=0.25 Width=200 CenterV Grid.Row=0 Grid.Column=3 />
+            <TextBlock Text="Color Level" CenterV Grid.Row=1 Grid.Column=0 />
             <Slider Value<=>`ColorLevels`
-                    Minimum=2 Maximum=16 Width=200 CenterV Grid_Row=1 Grid_Column=1 />
-            <TextBlock Text="Intensity" CenterV Grid_Row=1 Grid_Column=2 />
+                    Minimum=2 Maximum=16 Width=200 CenterV Grid.Row=1 Grid.Column=1 />
+            <TextBlock Text="Intensity" CenterV Grid.Row=1 Grid.Column=2 />
             <Slider Value<=>`Intensity`
-                    Minimum=0 Maximum=100 Width=200 CenterV Grid_Row=1 Grid_Column=3 />
+                    Minimum=0 Maximum=100 Width=200 CenterV Grid.Row=1 Grid.Column=3 />
         </Grid>
     //
     </root>

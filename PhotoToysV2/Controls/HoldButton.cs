@@ -20,6 +20,8 @@ namespace PhotoToysV2.Controls;
         BaseIsEnabled=`IsEnabled && !IsHoldingWithKeyboard`
         Background=`IsHolding ? holdingState.Value : defaultState.Value`
         Foreground=`IsHolding ? holdingStateForeground.Value : defaultStateForeground.Value`
+        // there are warnings for all of below
+        // warnings start around the equal sign to the end of line
         `Resources["ButtonBackgroundPressed"]`=`holdingState.Value`
         `Resources["ButtonForegroundPressed"]`=`holdingStateForeground.Value`
         `disabledBG.Color`=`C(IsHolding ? holdingState.Value : defaultStateDisabled.Value)`

@@ -27,6 +27,7 @@ global using Microsoft.Graphics.Canvas;
 global using static Properties;
 global using static DrawHelper;
 global using static QuickMarkup.Infra.QuickRefs;
+global using FrameworkElementExtensions = CommunityToolkit.WinUI.FrameworkElementExtensions;
 
 static class Properties
 {

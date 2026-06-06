@@ -26,10 +26,7 @@
 		<PackageReference Include="CommunityToolkit.Uwp.Controls.Segmented" Version="8.2.251219" />
 		<PackageReference Include="Get.UI.Data.UWP.NET9" Version="1.0.8" />
 		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.7" />
+		<PackageReference Include="QuickMarkup" Version="0.1.14" />
 		<PackageReference Include="Win2D.uwp" Version="1.28.2" />
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\QuickMarkup\QuickMarkup.Infra\QuickMarkup.Infra.csproj" />
-		<ProjectReference Include="..\QuickMarkup\QuickMarkup.SourceGen\QuickMarkup.SourceGen.csproj" ReferenceOutputAssembly="False" OutputItemType="Analyzer" />
 	</ItemGroup>
 </Project>

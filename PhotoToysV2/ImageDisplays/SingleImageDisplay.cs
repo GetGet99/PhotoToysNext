@@ -13,7 +13,7 @@ namespace PhotoToysV2.ImageDisplays;
     private ICanvasImage? InputImage = null;
     bool HasInputImage => `InputImage is not null`;
     private ICanvasImage? PreviewImage => `ApplyEffect(ImageEffect, InputImage)`;
-    private Size InputSize => /-() => {
+    private Size InputSize => `() => {
         var image = InputImage;
         if (image is null)
         {
@@ -21,8 +21,8 @@ namespace PhotoToysV2.ImageDisplays;
         }
         var bounds = image.Bounds;
         return new Size(bounds.Width, bounds.Height);
-    }-/;
-    private Size OutputSize => /-() => {
+    }`;
+    private Size OutputSize => `() => {
         var image = PreviewImage;
         if (image is null)
         {
@@ -30,36 +30,35 @@ namespace PhotoToysV2.ImageDisplays;
         }
         var bounds = image.Bounds;
         return new Size(bounds.Width, bounds.Height);
-    }-/;
+    }`;
     private ICanvasImage? DisplayImage => `ShouldShowOriginal ? (InputImage ?? PreviewImage) : PreviewImage`;
-    private Size DisplaySize => /-ShouldShowOriginal
+    private Size DisplaySize => `ShouldShowOriginal
         ? (double.IsNaN(InputSize.Width) ? OutputSize : InputSize)
-        : OutputSize-/;
+        : OutputSize`;
     bool ShouldShowOriginal = false;
     <root>
-        imgPicker = <ImagePicker MaxWidth=750 MaxHeight=500 Margin=16
-            IsVisible=`ShouldAskToOpen && InputImage is null && ImageEffect is not ICreateImageEffect`
-        />
-        scrollViewer = <ScrollViewer
-            IsVisible=`InputImage is not null || ImageEffect is ICreateImageEffect`
-            HorizontalScrollBarVisibility=Auto HorizontalScrollMode=Auto
-            ZoomMode=Enabled
-        >
-            <Grid
-                Width=`DisplaySize.Width`
-                Height=`DisplaySize.Height`
+        if (`ShouldAskToOpen && InputImage is null && ImageEffect is not ICreateImageEffect`)
+            imgPicker = <ImagePicker MaxWidth=750 MaxHeight=500 Margin=16 />
+        if(`InputImage is not null || ImageEffect is ICreateImageEffect`)
+            scrollViewer = <ScrollViewer
+                HorizontalScrollBarVisibility=Auto HorizontalScrollMode=Auto
+                ZoomMode=Enabled
             >
-                canvas = <CanvasControl
+                <Grid
                     Width=`DisplaySize.Width`
                     Height=`DisplaySize.Height`
-                    Draw+=`Draw`
-                />
-                resizerPlace = <Canvas
-                    Width=`DisplaySize.Width`
-                    Height=`DisplaySize.Height`
-                />
-            </Grid>
-        </ScrollViewer>
+                >
+                    canvas = <CanvasControl
+                        Width=`DisplaySize.Width`
+                        Height=`DisplaySize.Height`
+                        Draw+=`Draw`
+                    />
+                    resizerPlace = <Canvas
+                        Width=`DisplaySize.Width`
+                        Height=`DisplaySize.Height`
+                    />
+                </Grid>
+            </ScrollViewer>
     </root>
     """)]
 partial class SingleImageDisplay : Grid
@@ -99,8 +98,8 @@ partial class SingleImageDisplay : Grid
         Name = nameof(SingleImageDisplay);
         IImageEffect? old = null;
         Init();
-        ShouldShowOriginalProp.Watch(_ => canvas.Invalidate());
-        ImageEffectProp.Watch(x =>
+        ShouldShowOriginalProp!.Watch(_ => canvas.Invalidate());
+        ImageEffectProp!.Watch(x =>
         {
             void Redraw()
             {

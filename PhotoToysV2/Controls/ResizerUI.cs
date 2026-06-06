@@ -17,8 +17,8 @@ namespace PhotoToysV2.Controls;
     private double Margin => `ResizerSize - BorderSize`;
     private Thickness mg => `new(-Margin / 2)`;
     <root
-        Canvas_Left=`internalLayoutChanges ? UserLeft : 0`
-        Canvas_Top=`internalLayoutChanges ? UserTop : 0`
+        Canvas.Left=`internalLayoutChanges ? UserLeft : 0`
+        Canvas.Top=`internalLayoutChanges ? UserTop : 0`
         Width=`internalLayoutChanges ? CurrentWidth : InitialSize.Width`
         Height=`internalLayoutChanges ? CurrentHeight : InitialSize.Height`
     >

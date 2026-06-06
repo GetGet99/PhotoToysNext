@@ -6,7 +6,7 @@
     // make it so big for numberbox mode
     private double Min => `NumberBoxMode ? -255.0 : 0.0`;
     private double Max => `NumberBoxMode ? 255.0 : 1.0`;
-    private Matrix5x4 MatrixFinal => /-new Matrix5x4
+    private Matrix5x4 MatrixFinal => `new Matrix5x4
     {
         M11 = (float)MatrixRef[0, 0].Value,
         M12 = (float)MatrixRef[0, 1].Value,
@@ -28,7 +28,7 @@
         M52 = (float)MatrixRef[4, 1].Value,
         M53 = (float)MatrixRef[4, 2].Value,
         M54 = (float)MatrixRef[4, 3].Value,
-    }-/;
+    }`;
     <setup>
     string[] texts = ["Red", "Green", "Blue", "Alpha", "Constant"];
     </setup>
@@ -40,7 +40,7 @@
             ColumnDefinitions=<>
                 foreach (var i in ..6) <ColumnDefinition Width=`Auto()` />
             </>
-            /-x => {
+            `x => {
                 TransposeInputProp.Watch(transpose => {
                     if (transpose) {
                         if (x.ColumnDefinitions.Count is not 6) {
@@ -52,25 +52,25 @@
                         }
                     }
                 }, immediete: true);
-            }-/
+            }`
         >
-            <TextBlock Text=`TransposeInput ? "Output" : "Input"` CenterV Grid_Row=0 Grid_Column=0 />
+            <TextBlock Text=`TransposeInput ? "Output" : "Input"` CenterV Grid.Row=0 Grid.Column=0 />
             foreach (var i in 0..4) {
-                <TextBlock Text=`$"Output {texts[i]}"` CenterV Grid_Row=`TransposeInput ? i + 1 : 0` Grid_Column=`TransposeInput ? 0 : i + 1` />
+                <TextBlock Text=`$"Output {texts[i]}"` CenterV Grid.Row=`TransposeInput ? i + 1 : 0` Grid.Column=`TransposeInput ? 0 : i + 1` />
             }
             foreach (var i in 0..5) {
-                <TextBlock Text=`$"Input {texts[i]}"` CenterV Grid_Row=`TransposeInput ? 0 : i + 1` Grid_Column=`TransposeInput ? i + 1 : 0` />
+                <TextBlock Text=`$"Input {texts[i]}"` CenterV Grid.Row=`TransposeInput ? 0 : i + 1` Grid.Column=`TransposeInput ? i + 1 : 0` />
                 foreach (var j in 0..4) {
                     <NumberInput Value<=>`MatrixRef[i, j].Value`
                         Minimum=`Min` Maximum=`Max` Step=0.01 Width=100
                         CenterV
-                        Grid_Row=`TransposeInput ? j + 1 : i + 1`
-                        Grid_Column=`TransposeInput ? i + 1 : j + 1`
+                        Grid.Row=`TransposeInput ? j + 1 : i + 1`
+                        Grid.Column=`TransposeInput ? i + 1 : j + 1`
                         NumberBoxMode=`NumberBoxMode`
                     />
                 }
             }
-            <HStack Grid_Row=6 Grid_ColumnSpan=6 Spacing=16 CenterH>
+            <HStack Grid.Row=6 Grid.ColumnSpan=6 Spacing=16 CenterH>
                 <ToggleSwitch IsOn<=>`TransposeInput` OnContent="Output On Left" OffContent="Output On Top" />
                 <ToggleSwitch IsOn<=>`NumberBoxMode` OnContent="Advanced Mode" OffContent="Advanced Mode" />
             </HStack>

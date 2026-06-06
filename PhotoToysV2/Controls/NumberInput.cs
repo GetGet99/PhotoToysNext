@@ -9,20 +9,21 @@
     double Step = 1;
     bool NumberBoxMode = false;
     <root>
-        <Slider
-            IsVisible=`!NumberBoxMode`
-            Minimum=`Minimum` Maximum=`Maximum` StepFrequency=`Step`
-            Value<=>`Value`
-        />
-        <NumberBox IsVisible=`NumberBoxMode` Minimum=`Minimum` Maximum=`Maximum` Value<=>`Value`
-            NumberFormatter=<DecimalFormatter
-                IntegerDigits=1
-                FractionDigits=`-(int)Math.Floor(Math.Log10(Step))`
-                NumberRounder=<IncrementNumberRounder
-                    Increment=`Step`
-                    RoundingAlgorithm=RoundHalfUp
-                />
+        if (`!NumberBoxMode`)
+            <Slider
+                Minimum=`Minimum` Maximum=`Maximum` StepFrequency=`Step`
+                Value<=>`Value`
             />
+        else
+            <NumberBox Minimum=`Minimum` Maximum=`Maximum` Value<=>`Value`
+                NumberFormatter=<DecimalFormatter
+                    IntegerDigits=1
+                    FractionDigits=`-(int)Math.Floor(Math.Log10(Step))`
+                    NumberRounder=<IncrementNumberRounder
+                        Increment=`Step`
+                        RoundingAlgorithm=RoundHalfUp
+                    />
+                />
         />
     </root>
     """)]

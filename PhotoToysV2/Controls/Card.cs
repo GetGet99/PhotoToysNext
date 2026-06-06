@@ -1,7 +1,7 @@
 ﻿namespace PhotoToysV2;
 
 [QuickMarkup("""
-    Brush? Background = null;
+    Brush? Background = default;
     <setup>
     Padding = new(8);
     CornerRadius = new(16);

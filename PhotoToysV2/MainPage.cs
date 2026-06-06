@@ -38,7 +38,7 @@ namespace PhotoToysV2;
                     */
                 </HStack>
             </Grid>
-            <Border Child=`Menus[SelectedMenuIndex].UI` Grid_Row=1 />
+            <Border Child=`Menus[SelectedMenuIndex].UI` Grid.Row=1 />
         </Grid>
     </root>
     """)]
